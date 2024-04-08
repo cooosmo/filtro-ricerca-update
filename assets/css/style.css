@@ -1,0 +1,111 @@
+/* CSS RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+}
+
+/* UTILITIES */
+
+:root {
+    --bgc: #eee;
+    --primary-color: hsl(218, 100%, 31%);
+    --primary-color-h: hsl(218, 100%, 46%);
+    --border-radius: 15px;
+    --gap: 20px;
+}
+
+.p30 {padding: 30px;}
+
+/* MAIN */
+
+main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 3rem;
+    padding: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    gap: var(--gap);
+    padding: 40px;
+    background-color: var(--bgc);
+    border-radius: var(--border-radius);
+}
+
+form label {
+    font-size: 0.8rem;
+}
+
+form input,
+form button,
+#results button {
+    display: flex;
+    padding: 0.5rem 0.25rem;
+    border-radius: calc(var(--border-radius)/3);
+}
+
+form input {border: 1px solid;}
+
+form button,
+#results button {
+    justify-content: center;
+    text-transform: uppercase;
+    background-color: var(--primary-color);
+    color:white;
+    border: none;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+form button:hover,
+#results button:hover {
+    background-color: var(--primary-color-h);
+} 
+
+#results {
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+
+#results.show-me {opacity: 1;}
+
+#results h2 {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#results ul {
+    max-width: 600px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap:var(--gap);
+}
+
+#results li {
+    border-radius: var(--border-radius);
+    background-color: var(--bgc);
+    border: 2px solid transparent;
+    transition: all .5s ease-in-out;
+}
+
+#results li:hover {
+    background-color:hsl(218, 100%, 93%);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+#results button {
+    margin: 30px auto;
+    padding: 10px 20px; 
+}
